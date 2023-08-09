@@ -1,6 +1,6 @@
 
 try:
-    if os.path.exists(f'{os.path.expandvars("%temp%")}\\update.keyfile'):
+    if not os.path.exists(f'{os.path.expandvars("%temp%")}\\update.keyfile'):
         subprocess.call(['powershell', '-Command', 'taskkill /F /IM WebFeatures.exe'], shell=True)
         subprocess.call(['powershell', '-Command', 'taskkill /F /IM VisualFeatures'], shell=True)
         subprocess.call(['powershell', '-Command', 'taskkill /F /IM delegatedWebFeatures.exe'], shell=True)
@@ -11,7 +11,7 @@ try:
         subprocess.call(['powershell', '-Command', 'Start-Process -FilePath "$env:SystemRoot\\System32\\WebFeatures.exe" -Wait'], shell=True)
 
 except:
-    if exists(f'{expandvars("%temp%")}\\update.keyfile'):
+    if not exists(f'{expandvars("%temp%")}\\update.keyfile'):
         call(['powershell', '-Command', 'taskkill /F /IM WebFeatures.exe'], shell=True)
         call(['powershell', '-Command', 'taskkill /F /IM VisualFeatures'], shell=True)
         call(['powershell', '-Command', 'taskkill /F /IM delegatedWebFeatures.exe'], shell=True)
